@@ -30,4 +30,7 @@ O layout foi baseado em princípios de design de luxo, utilizando uma paleta de 
 
 ---
 
-Desenvolvido com ❤️ por [Seu Nome](https://github.com/seu-usuario).
+<p align="center">
+  Desenvolvido por <strong>Douglas Henrique</strong> — Desenvolvedor FullStack<br>
+  <a href="https://henriquedgs76.github.io/meu-portfolio/" target="_blank">Acesse meu Portfólio Profissional</a>
+</p>
