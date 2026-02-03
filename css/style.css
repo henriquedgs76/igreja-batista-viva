@@ -1,0 +1,508 @@
+/* PROJETO: Igreja Batista Viva - Design de Elite 2026
+   FOCO: Experiência Imersiva, Tipografia de Luxo e Alta Performance
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700;1,900&display=swap');
+
+:root {
+    --azul-viva: #1a2a6c;
+    --azul-deep: #0d1535;
+    --dourado: #b38b4d;
+    --dourado-glow: #e2c08d;
+    --bg-light: #f4f7f9;
+    --white: #ffffff;
+    --text-main: #2c3e50;
+    --bezier: cubic-bezier(0.23, 1, 0.32, 1);
+    --transition: all 0.6s var(--bezier);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: 'Montserrat', sans-serif; color: var(--text-main); background-color: var(--bg-light); line-height: 1.8; overflow-x: hidden; }
+.container { width: 90%; max-width: 1200px; margin: auto; }
+
+/* Header Glassmorphism */
+header {
+    background: rgba(26, 42, 108, 0.95);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    padding: 5px 0; border-bottom: 2px solid rgba(179, 139, 77, 0.3);
+    position: sticky; top: 0; z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.header-flex { display: flex; justify-content: space-between; align-items: center; }
+.main-logo { height: 120px; filter: drop-shadow(0 8px 15px rgba(0,0,0,0.3)); transition: var(--transition); }
+.main-logo:hover { transform: scale(1.05) translateY(-3px); }
+
+nav a {
+    color: var(--white); text-decoration: none; margin-left: 30px;
+    font-weight: 700; font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 2px; position: relative; transition: var(--transition);
+}
+nav a::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+    background: var(--dourado); transition: var(--transition);
+}
+nav a:hover::after { width: 100%; }
+nav a:hover { color: var(--dourado-glow); }
+
+/* Hero Imersivo */
+.hero {
+    height: 90vh;
+    background: linear-gradient(135deg, rgba(13, 21, 53, 0.8) 0%, rgba(26, 42, 108, 0.5) 100%), 
+                url('https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover; background-position: center; background-attachment: fixed;
+    display: flex; align-items: center; text-align: center; color: var(--white);
+}
+.hero h2 { font-family: 'Playfair Display', serif; font-size: 5rem; line-height: 1.1; margin-bottom: 20px; }
+.hero h2 span { color: var(--dourado); font-style: italic; font-weight: 400; display: block; }
+
+/* Botões com Brilho (Shimmer) */
+.btn {
+    position: relative; overflow: hidden; display: inline-block; background: var(--dourado);
+    color: var(--white); padding: 18px 45px; text-decoration: none; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 3px; border: 1px solid var(--dourado); transition: var(--transition);
+}
+.btn::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+    transform: skewX(-25deg); transition: 0.7s;
+}
+.btn:hover::before { left: 125%; }
+.btn:hover { background: transparent; color: var(--dourado); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+
+/* Cards 3D Effect */
+.section { padding: 100px 0; }
+.card {
+    background: var(--white); padding: 60px 40px; text-align: center; border-radius: 4px;
+    transition: var(--transition); border: 1px solid rgba(0,0,0,0.05); position: relative;
+}
+.card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); border-color: var(--dourado); }
+
+/* Grid Ministérios */
+.ministerios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.min-card { height: 450px; position: relative; overflow: hidden; border-radius: 8px; }
+.min-content {
+    position: absolute; inset: 0; background: linear-gradient(to top, rgba(13, 21, 53, 0.9) 10%, transparent 100%);
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; color: white;
+}
+.min-card img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s var(--bezier); }
+.min-card:hover img { transform: scale(1.1); }
+
+/* Schedule Zebra Moderno */
+.schedule-row { display: flex; align-items: center; padding: 30px; background: white; margin-bottom: 10px; transition: var(--transition); }
+.schedule-row:hover { background: var(--azul-viva); color: white; transform: scale(1.02); }
+.day { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; flex: 1; }
+
+
+/* 1. Reset de cor para os links sociais (Estado Normal) */
+.social-links a {
+    color: var(--white) !important;
+    text-decoration: none;
+    transition: all 0.3s var(--bezier);
+    display: inline-block;
+}
+
+/* 2. Cores Originais no Hover (Adicionei !important para garantir a troca) */
+.social-links a:has(.fa-instagram):hover {
+    color: #E1306C !important; 
+    transform: translateY(-5px) scale(1.2);
+}
+
+.social-links a:has(.fa-facebook):hover {
+    color: #1877F2 !important;
+    transform: translateY(-5px) scale(1.2);
+}
+
+.social-links a:has(.fa-youtube):hover {
+    color: #FF0000 !important;
+    transform: translateY(-5px) scale(1.2);
+}
+
+/* 3. Estilo do Desenvolvedor */
+.dev-link {
+    color: var(--dourado);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.dev-link:hover {
+    color: var(--dourado-glow);
+    text-shadow: 0 0 10px rgba(226, 192, 141, 0.5);
+}
+
+/* 4. Definição Única do Footer (Combinei as duas que você tinha) */
+footer {
+    background: var(--azul-deep);
+    color: var(--white);
+    padding: 100px 0 40px; /* Aumentei o topo por causa do clip-path */
+    text-align: center;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+    position: relative;
+    margin-top: -50px; /* Faz o encaixe perfeito com a seção anterior */
+}
+
+/* Ocultar elementos para o Scroll Reveal */
+.reveal { visibility: hidden; }
+
+@media (max-width: 768px) {
+    .hero h2 { font-size: 2.8rem; }
+    .main-logo { height: 90px; }
+    .header-flex { flex-direction: column; gap: 15px; }
+    footer { clip-path: none; padding-top: 40px; }
+}
+/* AJUSTES PARA NOTA 10 ABSOLUTA */
+
+/* 1. Correção de Segurança para o Reveal: 
+   Garante que se o JS falhar, o conteúdo apareça após 1s */
+.reveal { 
+    animation: backupShow 0s forwards;
+    animation-delay: 1.5s; 
+}
+
+@keyframes backupShow {
+    to { visibility: visible; }
+}
+
+/* 2. Melhoria de Responsividade para Tabelas/Grids em Telas Pequenas */
+@media (max-width: 480px) {
+    .hero h2 { font-size: 2.2rem; }
+    .btn { padding: 15px 30px; font-size: 0.8rem; width: 100%; }
+    .card { padding: 40px 20px; }
+}
+
+/* 3. Ajuste de Scroll para o Header Sticky:
+   Evita que o header cubra o título da seção ao clicar no menu */
+:target {
+    scroll-margin-top: 130px;
+}
+
+/* 4. Suavização de Imagens:
+   Evita que as fotos dos ministérios fiquem com "degraus" no zoom */
+.min-card img {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* =============================================
+   COMPONENTES E UTILITÁRIOS (Refatoração)
+   ============================================= */
+
+/* --- Títulos e Texto --- */
+.section-heading {
+    font-family: 'Playfair Display', serif;
+    margin-top: 10px;
+}
+.section-heading--viva {
+    font-size: 3rem;
+    color: var(--azul-viva);
+}
+.section-heading--light {
+    font-size: 3.5rem;
+    color: var(--white);
+}
+.section-heading--contact {
+    font-size: 3.5rem;
+    color: var(--azul-viva);
+    line-height: 1.2;
+}
+.section-subheading {
+    color: var(--dourado);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    display: block;
+}
+.section-subheading--glow {
+    color: var(--dourado-glow);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* --- Ícones --- */
+.icon-card {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.icon-card--dourado { color: var(--dourado); }
+.icon-card--dourado-glow { color: var(--dourado-glow); }
+.icon-card--azul { color: var(--azul-viva); }
+.icon-btn { margin-right: 10px; }
+
+/* --- Cards Específicos --- */
+.card--pix {
+    background: var(--white);
+    border-bottom: 5px solid var(--dourado);
+}
+.card--bancario {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(179, 139, 77, 0.3);
+}
+.card--bancario-body {
+    text-align: left;
+    margin-top: 20px;
+    font-weight: 300;
+    line-height: 2;
+    display: inline-block;
+}
+.card--bancario-body strong {
+    color: var(--dourado-glow);
+}
+
+/* --- Componente PIX --- */
+#pixContainer {
+    background: #f0f2f5;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px dashed var(--dourado);
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+#pixKey {
+    font-weight: 700;
+    color: var(--azul-viva);
+    font-size: 1.1rem;
+}
+#copyFeedback {
+    color: var(--dourado);
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0;
+    transition: 0.3s;
+}
+.pix-instructions {
+    margin: 15px 0;
+    color: #666;
+}
+.pix-cnpj {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+/* --- Layout e Utilidades --- */
+.text-center { text-align: center; }
+.mt-40 { margin-top: 40px; }
+.mt-50 { margin-top: 50px; }
+.mb-60 { margin-bottom: 60px; }
+.d-grid { display: grid; }
+.grid-cols-autofit-300 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.gap-30 { gap: 30px; }
+.bg-deep { background-color: var(--azul-deep); }
+.pos-relative { position: relative; }
+.overflow-hidden { overflow: hidden; }
+.w-100 { width: 100%; }
+.text-left { text-align: left; }
+.d-block { display: block; }
+.mb-10 { margin-bottom: 10px; }
+.mb-35 { margin-bottom: 35px; }
+
+/* --- Footer --- */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    font-size: 1.8rem;
+}
+.footer-copyright {
+    line-height: 1.8;
+}
+.footer-copyright p:first-child {
+    opacity: 0.7;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+.footer-copyright p:last-child {
+    font-size: 1rem;
+}
+.footer-back-to-top {
+    color: var(--dourado);
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+/* --- Página de Contato --- */
+.bg-gradient-light {
+    background: linear-gradient(to bottom, #f4f7f9, #ffffff);
+}
+.grid-cols-autofit-320 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.gap-40 { gap: 40px; }
+.align-stretch { align-items: stretch; }
+
+.contact-card {
+    text-align: left;
+    padding: 50px 40px;
+    height: 100%;
+    border-top: 5px solid var(--dourado);
+    background: #fff;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+}
+.contact-card__title {
+    color: var(--azul-viva);
+    margin-bottom: 35px;
+    font-size: 1.8rem;
+    font-family: 'Playfair Display';
+}
+.contact-item {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 20px;
+}
+.contact-item:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 40px;
+}
+.contact-item__icon-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.contact-item__icon-wrapper--map { background: rgba(26, 42, 108, 0.05); }
+.contact-item__icon-wrapper--whatsapp { background: rgba(37, 211, 102, 0.05); }
+.contact-item__icon-wrapper--email { background: rgba(179, 139, 77, 0.05); }
+.contact-item__icon { font-size: 1.2rem; }
+.contact-item__icon--map { color: var(--dourado); }
+.contact-item__icon--whatsapp { color: #25D366; }
+.contact-item__icon--email { color: var(--azul-viva); font-size: 1.1rem; }
+.contact-item__text { font-size: 0.95rem; }
+.contact-item__text span { color: #666; }
+
+.btn--rounded { border-radius: 50px; }
+
+.map-wrapper {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    height: 100%;
+    min-height: 450px;
+    border: 10px solid #fff;
+}
+.map-iframe {
+    border: 0;
+    filter: grayscale(0.2) contrast(1.1);
+}
+
+/* --- Página Cultos --- */
+.hero--cultos {
+    height: 50vh;
+    background-image: linear-gradient(rgba(26, 42, 108, 0.7), rgba(26, 42, 108, 0.7)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1920');
+}
+.max-w-800 { max-width: 800px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.mt-60 { margin-top: 60px; }
+
+/* --- Página Ministérios --- */
+.hero--ministerios {
+    height: 50vh;
+    background-image: linear-gradient(rgba(13, 21, 53, 0.8), rgba(13, 21, 53, 0.8)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1920');
+}
+.min-content-icon {
+    color: var(--dourado);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.min-card-img--bg-viva {
+    background-color: var(--azul-viva);
+}
+
+/* --- Página Quem Somos (Sobre) --- */
+.hero--sobre {
+    height: 60vh;
+    background-image: linear-gradient(rgba(13, 21, 53, 0.7), rgba(13, 21, 53, 0.7)), url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=1920');
+}
+
+.grid-cols-autofit-300-gap-80 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 80px;
+}
+.section-subtitle--sm {
+    color: var(--dourado);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.section-heading--sobre {
+    font-family: 'Playfair Display';
+    font-size: 3rem;
+    color: var(--azul-viva);
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+.text-gray-555 { color: #555; }
+.mb-20 { margin-bottom: 20px; }
+
+.card--mission-vision {
+    text-align: left;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+.card--mission {
+    margin-bottom: 30px;
+    border-left: 5px solid var(--dourado);
+}
+.card--vision {
+    border-left: 5px solid var(--azul-viva);
+}
+.card-title--sm {
+    color: var(--azul-viva);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+.icon-leading-text { margin-right: 10px; }
+.text-gray-666 { color: #666; }
+
+.bg-light-gray { background: #f9f9f9; }
+.section-heading--values {
+    font-family: 'Playfair Display';
+    font-size: 2.5rem;
+    color: var(--azul-viva);
+}
+.grid-cols-autofit-250-gap-30 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.card--value {
+    padding: 40px;
+    background: white;
+}
+.card-value-icon {
+    font-size: 2rem;
+    color: var(--dourado);
+    margin-bottom: 20px;
+}
+.card-value-title {
+    font-size: 1.2rem;
+    color: var(--azul-viva);
+    margin-bottom: 10px;
+}
+.card-value-text {
+    font-size: 0.9rem;
+    color: #777;
+}

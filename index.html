@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja Batista Viva | Uma Igreja viva para um Deus vivo</title>
+    <meta name="description" content="Igreja Batista Viva em Sumaré. Um lugar de recomeços, comunhão e fé. Conheça nossos cultos e ministérios.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="imgs/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon-16x16.png">
+    <meta name="theme-color" content="#1a2a6c">
+</head>
+<body>
+
+    <div id="main-header"></div>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2 class="reveal">Uma igreja viva para um <br><span>Deus vivo</span></h2>
+                <p class="reveal">Experimente a fé, a comunhão e a verdadeira transformação em Cristo. <br>Estamos no coração de Sumaré esperando por você.</p>
+                <div class="reveal mt-40">
+                    <a href="cultos.html" class="btn">
+                        <i class="fa-regular fa-calendar-check icon-btn"></i> 
+                        Ver Horários de Culto
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section container reveal text-center">
+            <span class="section-subheading">Comunhão</span>
+            <h2 class="section-heading section-heading--viva">Lugar de Recomeços</h2>
+            <div class="ministerios-grid mt-50">
+                <div class="card">
+                    <i class="fa-solid fa-cross icon-card icon-card--dourado"></i>
+                    <h4>A Palavra</h4>
+                    <p>Mensagens fundamentadas na Bíblia para edificar sua vida diária.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-users-line icon-card icon-card--dourado"></i>
+                    <h4>Família</h4>
+                    <p>Um ambiente acolhedor para todas as gerações crescerem juntas.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-heart-pulse icon-card icon-card--dourado"></i>
+                    <h4>Vida</h4>
+                    <p>Ações práticas de amor ao próximo e serviço à comunidade.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal bg-deep pos-relative overflow-hidden">
+            <div class="container">
+                <div class="text-center mb-60">
+                    <h2 class="section-heading section-heading--light">Generosidade</h2>
+                    <p class="section-subheading--glow">"Honre ao Senhor com todos os seus recursos."</p>
+                </div>
+
+                <div class="d-grid grid-cols-autofit-300 gap-30">
+                    
+                    <div class="card card--pix pos-relative">
+                        <i class="fa-solid fa-mobile-screen-button icon-card icon-card--azul"></i>
+                        <h4 class="card-title">Chave PIX</h4>
+                        <p class="pix-instructions">Toque na chave abaixo para copiar:</p>
+                        
+                        <div onclick="copyPix()" id="pixContainer">
+                            <span id="pixKey">financeiro@batistaviva.com.br</span>
+                        </div>
+                        <p id="copyFeedback">CHAVE COPIADA!</p>
+                        
+                        <p class="pix-cnpj">Igreja Batista Viva - Sumaré</p>
+                    </div>
+
+                    <div class="card card--bancario">
+                        <i class="fa-solid fa-building-columns icon-card icon-card--dourado-glow"></i>
+                        <h4 class="card-title card-title--light">Dados Bancários</h4>
+                        <div class="card--bancario-body">
+                            <p><strong>Banco:</strong> Itaú (0341)</p>
+                            <p><strong>Agência:</strong> 0000</p>
+                            <p><strong>C/C:</strong> 00000-0</p>
+                            <p><strong>CNPJ:</strong> 00.000.000/0001-00</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="main-footer"></div>
+    <script src="js/vendor/scrollreveal.min.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
